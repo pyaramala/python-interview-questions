@@ -46,7 +46,23 @@ def are_anagrams(str1,str2):
 
 print(are_anagrams("silent","listen")) #True
 print(are_anagrams("hello","world"))   #False
+print(are_anagrams("school master","The classrom")) #True
      
 
+# 5.Remove duplicate characters from a string
 
+s = input("Enter String: ")
+result = '' 
+for char in s:
+    if char not in result:
+        result+=char
+
+print(result) #
+
+'''
+Enter String: hello world
+helo wrd
+'''
+
+# 6. 
 
