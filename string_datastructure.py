@@ -170,7 +170,7 @@ for end,char in enumerate(s):
         break
     else:
         seen+=char
-print(seen)
+print(seen)   #abc
         
 
 
