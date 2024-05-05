@@ -97,4 +97,21 @@ Enter sub string: world
 6
 '''
 
-#19.
+#19.check if a string is valid palindrome after removing k characters
+ 
+# 20.Replace all occurence of a substring in a string with another substring
+
+s = input("Enter Main string: ")
+sub_string = input("Sub string: ")
+new_substring = input("New substring: ")
+result = s.replace(sub_string,new_substring)
+print(result)
+
+'''
+Enter Main string: Hello World
+Sub string: Hello
+New substring: Python
+Python World
+
+'''
+
