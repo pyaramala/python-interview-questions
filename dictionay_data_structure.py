@@ -104,3 +104,55 @@ d1 ={'city': 300, 'yaramala': 20, 'nani': 10}
 
 d.update(d1) 
 print(d)   #{'pradeep': 300, 'yaramala': 20, 'nani': 10, 'city': 300}
+
+#18. Take a dictionary from keyboard and print sum of values
+d = eval(input("Enter Dictionary: "))
+sum=sum(d.values())
+print("Sum: ",sum)
+
+#19. Find the occurence of each letter present in the given string
+s = input("Enter String: ")
+d = {}
+for i in s:
+    d[i]=d.get(i,0)+1
+for key,val in d.items():
+    print(f"{key} occured {val} times")
+
+
+'''
+Enter String: mississippi
+m occured 1 times
+i occured 4 times
+s occured 4 times
+p occured 2 times
+'''
+
+"""20. Write a progam to accept student name and marks from 
+the keyboard and creates a dictionary.Also dispaly student marks by taking student name"""
+
+n = int(input("enter number of students: "))
+d = {}
+for i in range(n):
+    name = input("Name: ")
+    marks= int(input("Marks: "))
+    d[name] = marks
+while True:
+    name = input("Enter name: ")
+    marks = d.get(name,-1)
+    if marks == -1:
+        print("Not found")
+    else:
+        print("Marks: ",marks)
+    option = input("Do you want to find another student[YES|NO]")
+    if option.upper()=='NO':
+        break
+# 21 Dictionary comprehension
+squares = {x:x*x for x in range(10)}
+print(squares)
+doubles = {x:x**3 for x in range(10)}
+print(doubles)
+
+'''
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+{0: 0, 1: 1, 2: 8, 3: 27, 4: 64, 5: 125, 6: 216, 7: 343, 8: 512, 9: 729}
+'''
