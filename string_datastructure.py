@@ -121,3 +121,57 @@ PS C:\Users\new\python_interview_questions\python-interview-questions>
 '''
 
 # 9.Remove all white spaces from a string
+s = input("Enter String: ")
+print(s.replace(" ",''))
+
+'''
+Enter String: hello world
+helloworld
+
+'''
+
+# 10. convert a string to lowercase,uppercase
+
+s = input("Enter String: ")
+str_lower = s.lower()
+str_upper = s.upper()
+print("Lower: ",str_lower)
+print("Upper: ",str_upper)
+
+'''
+Enter String: PRadeeP
+Lower:  pradeep
+Upper:  PRADEEP
+'''
+
+#11. Find the longest common pefix among an array of strings
+
+strings = ["flower","flow","flight"]
+prefix = ''
+min_length = min(len(s) for s in strings)
+for i in range(min_length):
+    char=strings[0][i]
+
+    if all(char== s[i] for s in strings):
+        prefix += char
+    else:
+        break
+print(prefix)   #f1
+
+
+# 12.Find the longest substring without repeating characters 
+
+s='abacdefbaba'
+seen=''
+max_length = 0
+start = 0
+for end,char in enumerate(s):
+    if s[end] in seen:
+        break
+    else:
+        seen+=char
+print(seen)
+        
+
+
+        
