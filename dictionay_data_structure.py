@@ -91,6 +91,16 @@ d ={'pradeep': 300, 'yaramala': 100, 'nani': 10}
 d1 = d.copy()
 print(d1) # d ={'pradeep': 300, 'yaramala': 100, 'nani': 10} 
 
+#16. get the value from dictionay if not create
+d ={'pradeep': 300, 'yaramala': 100, 'nani': 10} 
+print(d.setdefault('pradeep',10))
+print(d)
+print(d.setdefault('city','Vijayawada'))
+print(d)
 
+#17.Merge two dictionaries
+d = {'pradeep': 300, 'yaramala': 100, 'nani': 10} 
+d1 ={'city': 300, 'yaramala': 20, 'nani': 10} 
 
-
+d.update(d1) 
+print(d)   #{'pradeep': 300, 'yaramala': 20, 'nani': 10, 'city': 300}
