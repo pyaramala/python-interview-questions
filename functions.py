@@ -86,5 +86,43 @@ print(sum(10,20)) #30
 
 #11. Lambda function to find biggest of given values
 
+x = lambda a,b: a if a>b else b
+
 big = lambda a,b,c,d:max(a,b,c,d)
 print(big(1,2,3,4))
+
+#12. Program to filter even and odd numbers
+l = [0,5,10,15,20,25,30]
+l1 = list(filter(lambda x:x%2==0,l))
+print(l1)
+#Odd numbers
+l2 = list(filter(lambda x:x%2!=0,l))
+print(l2)
+
+'''
+[0, 10, 20, 30]
+[5, 15, 25]
+'''
+
+#13. map function
+l= [1,2,3,4]
+l1 = list(map(lambda x:2*x,l))
+print(l1) # [2, 4, 6, 8]
+
+# 14. TO find square of a numbers using map
+l=[1,2,3,4,5]
+l1 = list(map(lambda x:x*x,l))
+print(l1) # [1, 4, 9, 16, 25]
+
+#15. Reduce function
+l = [10,20,30,40,50]
+from functools import *
+result = reduce(lambda x,y:x+y,l)
+print(result) #150
+
+result = reduce(lambda x,y:x*y,l) # 12000000
+
+result = reduce(lambda x,y: x+y,range(1,101)) #5050
+
+
+# 16. 

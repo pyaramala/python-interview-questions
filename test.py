@@ -1,2 +1,4 @@
-big = lambda a,b,c,d:max(a,b,c,d)
-print(big(1,2,3,4))
+l=[10,20,30,40,50]
+from functools import *
+result = reduce(lambda x,y: x+y,range(1,101))
+print(result)  

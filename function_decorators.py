@@ -92,4 +92,8 @@ def wish(name):
 wish("Pradeep")
 
 
-# 6. 
+# 6. Program to filter only even numbers from the list by using filter() function?
+
+l = [0,5,15,20,25,30]
+l1 = list(filter(lambda x:x%2==0,l))
+print(l1)
