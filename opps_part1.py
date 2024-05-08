@@ -387,3 +387,135 @@ print(t1.a,Test.b)
 
 '''
 
+# How to delete the stactic variables of a class
+
+class Test:
+    a = 10
+    @classmethod
+    def m1(cls):
+        del cls.a
+
+Test.m1()
+print(Test.__dict__)
+
+'''
+{'__module__': '__main__', 'm1': <classmethod(<function Test.m1 at 0x000001E602E498A0>)>, 
+'__dict__': <attribute '__dict__' of 'Test' objects>, 
+'__weakref__': <attribute '__weakref__' of 'Test' objects>, '__doc__': None}
+'''
+
+class Test:
+    a = 10
+    def __init__(self):
+        Test.b = 20
+        del Test.a
+
+    def m1(self):
+        Test.c = 30
+        del Test.b
+    @classmethod
+    def m2(cls):
+        cls.d = 40
+        del Test.c
+    @staticmethod
+    def m3():
+        Test.e = 50
+        del Test.d
+
+print(Test.__dict__)
+t = Test()
+print(Test.__dict__)
+t.m1()
+print(Test.__dict__)
+t.m2()
+print(Test.__dict__)
+t.m3()
+print(Test.__dict__)
+Test.f = 60
+print(Test.__dict__)
+del Test.e 
+print(Test.__dict__)
+
+
+#We can modiify or delete static vaiables only by using class name or cls variable
+
+import sys
+class Customer:
+    '''
+    Customer class with bank operation
+    '''
+    bankname = 'DURGABANK'
+    def __init__(self,name,balance=0.0):
+        self.name = name
+        self.balance = balance
+
+    def deposite(self,amt):
+        self.balance = self.balance + amt
+        print("Amount afte deposite",self.balance)
+
+    def withdraw(self,amt):
+        if amt <= self.balance:
+            self.balance = self.balance-amt
+            print("Balance after withdraw",self.balance)
+        else:
+            print("Insufficient funds cannot perform this operation")
+            sys.exit()
+
+print("Welcome to",Customer.bankname)
+name = input("Enter your name: ")
+c = Customer(name)
+while True:
+    print("d-Deposit\nw-Withdraw\ne=exit")
+    option = input("Choose your option")
+    if option == 'd' :
+        amt = float(input("Enter Amount"))
+        c.deposite(amt)
+    elif option == 'w':
+        amt = float(input("Enter Amount"))
+        c.withdraw(amt)
+    elif option == 'e':
+        sys.exit()
+    else:
+        print("Invalid option")
+
+    
+'''
+Enter your name: pradeep
+d-Deposit
+w-Withdraw        
+e=exit
+Choose your optiond
+Enter Amount5
+Amount afte deposite 5.0
+d-Deposit
+w-Withdraw
+e=exit
+Choose your optionw     
+Enter Amount2
+Balance after withdraw 3.0
+d-Deposit
+w-Withdraw
+e=exit
+Choose your optione
+
+
+'''
+
+# Local variables
+
+class Test:
+    def m1(self):
+        a = 10
+        print(a)
+    def m2(self):
+        b = 20
+        print(b)
+t = Test()
+t.m1()
+t.m2()
+
+'''
+10
+20
+'''
+
