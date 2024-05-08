@@ -1,10 +1,22 @@
-class Test:
-    def m1(self):
-        a = 10
-        print(a)
-    def m2(self):
-        b = 20
-        print(b)
-t = Test()
-t.m1()
-t.m2()
+class Student:
+    def setName(self,name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+    
+    def setMarks(self,marks):
+        self.marks = marks
+
+    def getMarks(self):
+        return self.marks
+
+n = int(input("Enter no.of students"))
+for i in range(n):
+    s = Student()
+    s.setName(input("name"))
+    s.setMarks(input("marks"))
+
+    print(s.getName())
+    print(s.getMarks())
+    print()

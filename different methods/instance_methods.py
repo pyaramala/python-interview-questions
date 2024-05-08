@@ -41,3 +41,44 @@ Name:  kumar
 Marks:  55
 Second Grade
 '''
+
+
+# Setters and getters
+
+class Student:
+    def setName(self,name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+    
+    def setMarks(self,marks):
+        self.marks = marks
+
+    def getMarks(self):
+        return self.marks
+
+n = input("Enter no.of students")
+for i in range(n):
+    s = Student()
+    s.setName('pradeep')
+    s.setMarks(40)
+
+    print(s.getName())
+    print(s.getMarks())
+    print()
+
+
+'''
+Enter no.of students2
+namepradeep
+marks4
+pradeep
+4
+
+namekumar
+marks30
+kumar
+30
+
+'''
