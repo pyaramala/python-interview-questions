@@ -1,7 +1,7 @@
 # Duck typing philosophy of python
 
 class Duck:
-    def talk(self):
+    def bark(self):
         print("Quack.....Quack")
 
 class Dog:
@@ -17,7 +17,10 @@ class Goat:
         print("Myaah Myaah...")
 
 def f1(obj):
-    obj.talk()
+    if hasattr(obj,'talk'):
+        obj.talk()
+    if hasattr(obj,'bark'):
+        obj.bark()
 
 l= [Duck(),Cat(),Goat()]
 for obj in l:
